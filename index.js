@@ -1,11 +1,10 @@
 function fiboSeq(){
     let fibo = [];
     let n = document.querySelector("#limit").value;
-    fibo[0] = 0;
-    fibo[1] = 1;
+    let gRatio = 1.618034;
 
-    for(let i = 2; i <= n; i++){
-        fibo[i] = fibo[i-1] + fibo[i-2];
+    for(let i = 0; i <= n; i++){
+        fibo[i] = Math.round((Math.pow(gRatio, i) - Math.pow((1 - gRatio), i)) / Math.sqrt(5));
     }
 
     document.querySelector("#sequence").innerHTML = fibo;
